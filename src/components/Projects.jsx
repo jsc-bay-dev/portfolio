@@ -32,149 +32,72 @@ const Projects = () => {
   ];
 
   return (
-    <div className="projects-section" style={{
-      padding: '40px 20px',
-      maxWidth: '1200px',
-      margin: '0 auto'
-    }}>
-      <h1 style={{
-        fontSize: '2.5rem',
-        textAlign: 'center',
-        marginBottom: '20px',
-        color: '#333'
-      }}>Projects</h1>
+    <div className="max-w-6xl mx-auto px-6 py-16 bg-white">
       
-      <p style={{
-        textAlign: 'center',
-        fontSize: '1.1rem',
-        color: '#666',
-        marginBottom: '40px',
-        maxWidth: '600px',
-        margin: '0 auto 40px auto'
-      }}>
-        Here are some of my recent projects showcasing different technologies and skills.
-        Click on the thumbnails to view live demos or visit the GitHub repositories.
-      </p>
+      {/* Header */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Projects
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Here are some of my recent projects showcasing different technologies and skills.
+          Click on the thumbnails to view live demos or visit the GitHub repositories.
+        </p>
+      </div>
 
-      <div className="projects-grid" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '30px',
-        marginTop: '30px'
-      }}>
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map(project => (
-          <div key={project.id} className="project-card" style={{
-            backgroundColor: '#fff',
-            borderRadius: '12px',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-            overflow: 'hidden',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            border: '1px solid #e0e0e0'
-          }}>
-            {/* Thumbnail as clickable link */}
+          <div key={project.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden group hover:scale-105">
+            
+            {/* Thumbnail */}
             <a 
               href={project.liveUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
+              className="block relative overflow-hidden"
             >
-              <div className="project-thumbnail" style={{
-                height: '200px',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '4rem',
-                cursor: 'pointer',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <span style={{ zIndex: 2 }}>{project.thumbnail}</span>
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  backgroundColor: 'rgba(0,0,0,0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: 0,
-                  transition: 'opacity 0.3s ease',
-                  color: 'white',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold'
-                }} className="hover-overlay">
-                  View Live Demo →
+              <div className="h-48 bg-gray-100 flex items-center justify-center text-6xl cursor-pointer relative">
+                <span className="relative z-10">{project.thumbnail}</span>
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    View Live Demo →
+                  </span>
                 </div>
               </div>
             </a>
 
-            <div className="project-content" style={{
-              padding: '25px'
-            }}>
-              <h3 style={{
-                fontSize: '1.5rem',
-                marginBottom: '12px',
-                color: '#333'
-              }}>{project.title}</h3>
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {project.title}
+              </h3>
               
-              <p style={{
-                color: '#666',
-                lineHeight: '1.6',
-                marginBottom: '20px',
-                fontSize: '0.95rem'
-              }}>{project.description}</p>
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                {project.description}
+              </p>
 
-              <div className="technologies" style={{
-                marginBottom: '20px'
-              }}>
-                <h4 style={{
-                  fontSize: '0.9rem',
-                  color: '#888',
-                  marginBottom: '8px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px'
-                }}>Technologies Used:</h4>
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '6px'
-                }}>
+              {/* Technologies */}
+              <div className="mb-6">
+                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  Technologies Used:
+                </h4>
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
-                    <span key={index} style={{
-                      backgroundColor: '#f0f0f0',
-                      color: '#555',
-                      padding: '4px 10px',
-                      borderRadius: '12px',
-                      fontSize: '0.8rem',
-                      border: '1px solid #ddd'
-                    }}>{tech}</span>
+                    <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium border border-gray-200">
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
 
-              <div className="project-links" style={{
-                display: 'flex',
-                gap: '12px'
-              }}>
+              {/* Links */}
+              <div className="flex gap-3">
                 <a 
                   href={project.liveUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  style={{
-                    flex: 1,
-                    backgroundColor: '#007bff',
-                    color: 'white',
-                    padding: '10px 16px',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                    fontSize: '0.9rem',
-                    fontWeight: '500',
-                    transition: 'background-color 0.3s ease'
-                  }}
+                  className="flex-1 bg-gray-900 text-white px-4 py-2 rounded-lg text-center text-sm font-medium hover:bg-gray-800 transition-colors"
                 >
                   Live Demo
                 </a>
@@ -182,18 +105,7 @@ const Projects = () => {
                   href={project.githubUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  style={{
-                    flex: 1,
-                    backgroundColor: '#333',
-                    color: 'white',
-                    padding: '10px 16px',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                    fontSize: '0.9rem',
-                    fontWeight: '500',
-                    transition: 'background-color 0.3s ease'
-                  }}
+                  className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-center text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors"
                 >
                   GitHub Repo
                 </a>

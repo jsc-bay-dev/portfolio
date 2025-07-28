@@ -1,26 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Header from './components/Header'
 import Contact from './components/Contact'
 import About from './components/About'
 import Blog from './components/Blog'
 import Projects from './components/Projects'
 import Credentials from './components/Credentials'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Header></Header>
-      <About></About>
-      <Credentials></Credentials>
-      <Projects></Projects>
-      <Blog></Blog>
-      <Contact></Contact>
-    </>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <main className="space-y-16">
+        <section id="about" className="bg-white">
+          <About />
+        </section>
+        <section id="credentials" className="bg-gray-50 py-16">
+          <Credentials />
+        </section>
+        <section id="projects" className="bg-white">
+          <Projects />
+        </section>
+        <section id="blog" className="bg-gray-50">
+          <Blog />
+        </section>
+        <section id="contact" className="bg-white">
+          <Contact />
+        </section>
+      </main>
+    </div>
   )
 }
 

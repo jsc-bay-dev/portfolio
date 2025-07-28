@@ -6,47 +6,40 @@ import github from '../assets/github.svg';
 
 const Header = () => {
   return (
-    <header className="header" style={{ width: '100%', color: 'black', opacity: 1 }}  >
-      <nav
-        className="header-nav"
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          width: '100%',
-          padding: '0 20px',
-        }}
-      >
-        <a href="" className="home-button" aria-label="Home">
-          <img src={logo} alt="" className="logo" />
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+      <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+        {/* Logo */}
+        <a href="" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Home">
+          <img src={logo} alt="Logo" className="h-8 w-8" />
         </a>
-        <div
-          className="tab-menu"
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}
-        >
-          <ul
-            className="tab-menu-list"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              listStyle: 'none',
-              margin: 0,
-              padding: 0,
-            }}
-          >
-            <li><a href="" className="tab about-me" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>About Me</a></li>
-            <li><a href="" className="tab credentials" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Credentials</a></li>
-            <li><a href="" className="tab skills" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Skills</a></li>
-            <li><a href="" className="tab projects" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Projects</a></li>
-            <li><a href="" className="tab contact" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Contact</a></li>
-          </ul>
-          
+        
+        {/* Navigation Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          <a href="#about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            About Me
+          </a>
+          <a href="#credentials" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            Credentials
+          </a>
+          <a href="#skills" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            Skills
+          </a>
+          <a href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            Projects
+          </a>
+          <a href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">
+            Contact
+          </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+          <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
       </nav>
     </header>
   )
