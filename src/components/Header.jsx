@@ -6,7 +6,7 @@ import github from '../assets/github.svg';
 
 const Header = () => {
   return (
-    <div className="header" style={{ width: '100%' }}>
+    <header className="header" style={{ width: '100%', color: 'black', opacity: 1 }}  >
       <nav
         className="header-nav"
         style={{
@@ -39,16 +39,16 @@ const Header = () => {
               padding: 0,
             }}
           >
-            <li><a href="" className="tab about-me" style={{ padding: '8px 12px' }}>About Me</a></li>
-            <li><a href="" className="tab credentials" style={{ padding: '8px 12px' }}>Credentials</a></li>
-            <li><a href="" className="tab skills" style={{ padding: '8px 12px' }}>Skills</a></li>
-            <li><a href="" className="tab projects" style={{ padding: '8px 12px' }}>Projects</a></li>
-            <li><a href="" className="tab contact" style={{ padding: '8px 12px' }}>Contact</a></li>
+            <li><a href="" className="tab about-me" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>About Me</a></li>
+            <li><a href="" className="tab credentials" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Credentials</a></li>
+            <li><a href="" className="tab skills" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Skills</a></li>
+            <li><a href="" className="tab projects" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Projects</a></li>
+            <li><a href="" className="tab contact" style={{ padding: '8px 12px', color: 'black', textDecoration: 'none' }}>Contact</a></li>
           </ul>
           
         </div>
       </nav>
-    </div>
+    </header>
   )
 }
 

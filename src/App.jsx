@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Contact from './components/Contact'
 import About from './components/About'
 import Blog from './components/Blog'
+import Projects from './components/Projects'
+import Credentials from './components/Credentials'
 import './App.css'
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
     <>
       <Header></Header>
       <About></About>
+      <Credentials></Credentials>
+      <Projects></Projects>
       <Blog></Blog>
       <Contact></Contact>
     </>
