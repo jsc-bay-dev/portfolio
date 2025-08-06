@@ -1,6 +1,9 @@
 const Vibes = () => {
   return (
     <div>
+      <div>
+        <p>Rumor has it, Lance Armstrong never actually had testicular cancer...</p>
+      </div>
       <p>What's that?</p>
       <iframe 
         width="560" 
